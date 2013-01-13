@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<cross-domain-policy>
+  <allow-access-from domain="rutube.ru" />
+  <allow-access-from domain="*.rutube.ru" />
+  <allow-access-from domain="*.ezn-dev01.rutube.corp" />
+  <allow-access-from domain="*.odnoklassniki.ru" />
+  <allow-access-from domain="*.odkl.ru" />
+  <allow-access-from domain="*.mail.ru" />
+  <allow-access-from domain="*.kinopoisk.ru" />
+  <allow-access-from domain="*.vkontakte.ru" />
+</cross-domain-policy>

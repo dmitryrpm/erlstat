@@ -1,0 +1,36 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script>
+		try {
+			track_id = $(location).attr('href').match(/track_id=([^&]+)/)[1];
+		} catch(e) {
+			track_id = 1000
+		}
+
+		$.ajax( {url: '/set/?track_id=' + track_id,
+			 type: "POST",
+			 dataType: "json",
+			 data: '', 
+			 success: function(data, textStatus, jqXHR) {alert("Test SET track_id => [" + track_id + "] cross origin success, value: " + data['value']);},
+			 error: function(jqXHR, textStatus, errorThrown) {alert("Test SET track_id => [" + track_id + "] cross origin failure");}
+		});
+
+
+		function getParameterByName(name, href)
+			{
+			  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+			  var regexS = "[\\?&]"+name+"=([^&#]*)";
+			  var regex = new RegExp( regexS );
+			  var results = regex.exec( href );
+			  if( results == null )
+			    return "";
+			  else
+			    return decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+
+	</script>
+<head>
+<body>
+</body>
+</html>
